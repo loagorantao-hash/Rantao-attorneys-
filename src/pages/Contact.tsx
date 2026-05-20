@@ -104,7 +104,7 @@ const Contact = () => {
   const [showWhatsAppBanner, setShowWhatsAppBanner] = useState(false);
 
   // Snapshot used to build the WhatsApp message after form is cleared
-  const [lastSubmission, setLastSubmission] = useState(typeof formData);
+  const [lastSubmission, setLastSubmission] = useState(formData);
 
   const buildWhatsAppUrl = (data: typeof formData) => {
     const waText = [
