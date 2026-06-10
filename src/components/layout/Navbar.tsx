@@ -6,9 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Team", href: "/team" },
+  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -25,13 +25,15 @@ const Navbar = () => {
       <nav className="container-wide">
         <div className="flex items-center justify-between h-20">
           {/* Brand Mark */}
-          <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
-            <span className="inline-flex items-center justify-center border-2 border-primary text-primary font-serif font-bold text-xl w-11 h-11 rounded-[3px]">
-              RA
-            </span>
-            <div className="flex flex-col leading-tight">
-              <span className="font-serif font-bold text-charcoal text-lg tracking-wide uppercase">RANTAO</span>
-              <span className="font-serif text-xs text-muted-foreground tracking-wider uppercase">Attorneys</span>
+          <Link to="/" className="flex items-center gap-4 flex-shrink-0">
+            <div className="relative flex items-center justify-center bg-[#be1e2d] text-white font-serif w-14 h-14 shadow-sm">
+              <span className="absolute top-1.5 left-2 text-[32px] leading-none z-10">R</span>
+              <span className="absolute bottom-1 right-2 text-[32px] leading-none" style={{ marginLeft: '-8px' }}>A</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-serif text-[#be1e2d] text-3xl tracking-widest uppercase leading-none">RANTAO</span>
+              <div className="w-full h-[1px] bg-border my-1"></div>
+              <span className="font-serif text-[10px] text-muted-foreground tracking-[0.45em] uppercase text-center w-full block ml-1">ATTORNEYS</span>
             </div>
           </Link>
 
@@ -54,10 +56,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+2673919262" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-              <Phone className="h-4 w-4" />
-              +267 391 9262
-            </a>
+        
             <Button variant="crimson" size="sm" asChild>
               <Link to="/contact" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />

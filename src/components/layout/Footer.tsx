@@ -44,18 +44,18 @@ const Footer = () => {
             <h4 className="font-serif text-lg font-semibold mb-4">Practice Areas</h4>
             <ul className="space-y-3">
               {[
-                "Constitutional Law",
-                "Labour Law",
-                "Civil Litigation",
-                "Commercial Law",
-                "Conveyancing",
+                { name: "Constitutional Law", slug: "constitutional-administrative-law" },
+                { name: "Labour Law", slug: "labour-employment-law" },
+                { name: "Civil Litigation", slug: "civil-litigation" },
+                { name: "Commercial Law", slug: "commercial-law" },
+                { name: "Conveyancing", slug: "property-conveyancing" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <Link
-                    to="/services"
+                    to={`/services/${item.slug}`}
                     className="text-sm text-white/70 hover:text-white transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
