@@ -8,13 +8,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2.5">
-              <span className="inline-flex items-center justify-center border-2 border-primary text-primary font-serif font-bold text-lg w-10 h-10 rounded-[3px]">
-                RA
-              </span>
-              <div className="flex flex-col leading-tight">
-                <span className="font-serif font-bold text-white text-base tracking-wide uppercase">RANTAO</span>
-                <span className="font-serif text-xs text-white/60 tracking-wider uppercase">Attorneys</span>
+            <Link to="/" className="flex items-center gap-3">
+              {/* Red square icon with overlapping R & A */}
+              <div className="relative bg-[#be1e2d] text-white font-serif w-11 h-11 flex-shrink-0 overflow-hidden">
+                <span className="absolute top-0 left-0.5 text-[36px] leading-none">R</span>
+                <span className="absolute bottom-0 right-0.5 text-[36px] leading-none">A</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-serif text-[#be1e2d] text-xl tracking-[0.2em] uppercase leading-none">RANTAO</span>
+                <div className="w-full h-[1px] bg-white/20 my-1"></div>
+                <span className="font-serif text-[9px] text-white/60 tracking-[0.45em] uppercase text-center w-full block">ATTORNEYS</span>
               </div>
             </Link>
             <p className="text-sm text-white/70 leading-relaxed">

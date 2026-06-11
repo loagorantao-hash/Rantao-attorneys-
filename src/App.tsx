@@ -16,7 +16,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const App = () => (
   <TooltipProvider>
     <Toaster />
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <ScrollToTop />
       <Suspense fallback={null}>
         <Routes>

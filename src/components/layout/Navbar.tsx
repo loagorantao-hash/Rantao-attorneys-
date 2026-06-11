@@ -23,17 +23,19 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border shadow-subtle">
       <nav className="container-wide">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Brand Mark */}
-          <Link to="/" className="flex items-center gap-4 flex-shrink-0">
-            <div className="relative flex items-center justify-center bg-[#be1e2d] text-white font-serif w-14 h-14 shadow-sm">
-              <span className="absolute top-1.5 left-2 text-[32px] leading-none z-10">R</span>
-              <span className="absolute bottom-1 right-2 text-[32px] leading-none" style={{ marginLeft: '-8px' }}>A</span>
+          <Link to="/" className="flex items-center gap-2.5 md:gap-4 flex-shrink-0">
+            {/* Red square — smaller on mobile */}
+            <div className="relative bg-[#be1e2d] text-white font-serif w-10 h-10 md:w-14 md:h-14 shadow-sm overflow-hidden flex-shrink-0">
+              <span className="absolute top-0 left-0.5 text-[32px] md:text-[44px] leading-none">R</span>
+              <span className="absolute bottom-0 right-0.5 text-[32px] md:text-[44px] leading-none">A</span>
             </div>
+            {/* Text — smaller on mobile */}
             <div className="flex flex-col">
-              <span className="font-serif text-[#be1e2d] text-3xl tracking-widest uppercase leading-none">RANTAO</span>
+              <span className="font-serif text-[#be1e2d] text-lg md:text-2xl tracking-[0.2em] uppercase leading-none">RANTAO</span>
               <div className="w-full h-[1px] bg-border my-1"></div>
-              <span className="font-serif text-[10px] text-muted-foreground tracking-[0.45em] uppercase text-center w-full block ml-1">ATTORNEYS</span>
+              <span className="font-serif text-[8px] md:text-[10px] text-muted-foreground tracking-[0.4em] uppercase text-center w-full block">ATTORNEYS</span>
             </div>
           </Link>
 
@@ -43,11 +45,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                  location.pathname === link.href
-                    ? "text-primary"
-                    : "text-foreground"
-                }`}
+                className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${location.pathname === link.href
+                  ? "text-primary"
+                  : "text-foreground"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -56,7 +57,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-        
+
             <Button variant="crimson" size="sm" asChild>
               <Link to="/contact" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
@@ -94,11 +95,10 @@ const Navbar = () => {
                   <Link
                     key={link.name}
                     to={link.href}
-                    className={`block py-3 px-4 text-base font-medium transition-colors ${
-                      location.pathname === link.href
-                        ? "text-primary bg-muted"
-                        : "text-foreground hover:bg-muted"
-                    }`}
+                    className={`block py-3 px-4 text-base font-medium transition-colors ${location.pathname === link.href
+                      ? "text-primary bg-muted"
+                      : "text-foreground hover:bg-muted"
+                      }`}
                   >
                     {link.name}
                   </Link>
