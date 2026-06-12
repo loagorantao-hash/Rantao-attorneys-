@@ -91,6 +91,10 @@
     @apply border-border;
   }
 
+  html, body {
+    overflow-x: hidden;
+  }
+
   html {
     scroll-behavior: smooth;
   }

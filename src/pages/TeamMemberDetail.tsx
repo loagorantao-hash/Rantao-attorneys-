@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowLeft, Linkedin, Mail, User, GraduationCap, Briefcase, Award, Star, Scale as ScaleIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -112,16 +112,12 @@ const TeamMemberDetail = () => {
         experience: "Extensive experience in legal practice."
       };
 
-  useEffect(() => {
-    document.title = `${member.name} | Rantao Attorneys`;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', member.bio.substring(0, 160));
-    }
-  }, [member]);
-
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{member.name} | Rantao Attorneys</title>
+        <meta name="description" content={member.bio.substring(0, 160)} />
+      </Helmet>
       <Navbar />
 
       <section className="pt-32 pb-16 bg-off-white">

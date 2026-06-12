@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -68,19 +68,12 @@ const ServiceDetail = () => {
         features: ["Expert representation", "Strategic advice", "Client-focused approach", "Effective resolution"]
       };
 
-  useEffect(() => {
-    // Update document title for SEO
-    document.title = `${service.title} | Rantao Attorneys`;
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', service.description);
-    }
-  }, [service]);
-
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>{service.title} | Rantao Attorneys</title>
+        <meta name="description" content={service.description} />
+      </Helmet>
       <Navbar />
 
       {/* Hero Header */}

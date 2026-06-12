@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Shield, Users, BookOpen, Scale, CheckCircle } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -23,6 +24,10 @@ const differentiators = [
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About Us | Rantao Attorneys</title>
+        <meta name="description" content="Learn about Rantao Attorneys, a leading law firm in Gaborone, Botswana, committed to high-quality legal services, integrity, and client success." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
@@ -87,6 +92,7 @@ const About = () => {
                 src={teamMeeting}
                 alt="Rantao Attorneys Team in Boardroom"
                 className="rounded-[20px] shadow-strong w-full"
+                loading="lazy"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-[20px] shadow-medium hidden md:block">
                 <p className="font-serif text-2xl font-bold">10+</p>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -180,6 +181,10 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Us | Rantao Attorneys</title>
+        <meta name="description" content="Get in touch with Rantao Attorneys for professional legal consultation and representation in Gaborone, Botswana." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
@@ -285,6 +290,7 @@ const Contact = () => {
                   <Input
                     id="name"
                     name="name"
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -294,11 +300,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-charcoal mb-2">
+                  <label htmlFor="inquiryType" className="block text-sm font-medium text-charcoal mb-2">
                     Inquiry Type
                   </label>
-                  <Select value={inquiryType} onValueChange={setInquiryType}>
-                    <SelectTrigger className="bg-background">
+                  <Select value={inquiryType} onValueChange={setInquiryType} name="inquiryType">
+                    <SelectTrigger id="inquiryType" className="bg-background">
                       <SelectValue placeholder="Select inquiry type" />
                     </SelectTrigger>
                     <SelectContent className="bg-background z-50">
@@ -320,6 +326,7 @@ const Contact = () => {
                     <Input
                       id="companyName"
                       name="companyName"
+                      autoComplete="organization"
                       value={formData.companyName}
                       onChange={handleChange}
                       placeholder="Your company name"
@@ -337,6 +344,7 @@ const Contact = () => {
                       id="email"
                       name="email"
                       type="email"
+                      autoComplete="email"
                       value={formData.email}
                       onChange={handleChange}
                       required
@@ -352,6 +360,7 @@ const Contact = () => {
                       id="phone"
                       name="phone"
                       type="tel"
+                      autoComplete="tel"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+267..."
@@ -367,8 +376,9 @@ const Contact = () => {
                   <Select
                     value={formData.inquiry}
                     onValueChange={(value) => setFormData({ ...formData, inquiry: value })}
+                    name="inquiry"
                   >
-                    <SelectTrigger className="bg-background">
+                    <SelectTrigger id="inquiry" className="bg-background">
                       <SelectValue placeholder="Select inquiry type" />
                     </SelectTrigger>
                     <SelectContent className="bg-background z-50">

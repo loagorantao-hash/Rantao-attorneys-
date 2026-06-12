@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Award, Globe, Scale, User, Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/layout/Navbar";
@@ -25,6 +26,10 @@ const teamMembers = [
 const Team = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Our Team | Rantao Attorneys</title>
+        <meta name="description" content="Meet the experienced legal professionals at Rantao Attorneys. Our team is dedicated to delivering excellence in every case." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}
@@ -243,6 +248,7 @@ const Team = () => {
                 src={teamMeeting}
                 alt="Rantao Attorneys Team Meeting"
                 className="relative rounded-[20px] shadow-2xl w-full object-cover aspect-[4/3]"
+                loading="lazy"
               />
             </motion.div>
           </div>

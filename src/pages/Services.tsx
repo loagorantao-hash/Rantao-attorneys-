@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { 
   Scale, 
   Briefcase, 
@@ -78,6 +79,10 @@ const services = [
 const Services = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Legal Services | Rantao Attorneys</title>
+        <meta name="description" content="Explore the comprehensive legal services offered by Rantao Attorneys in Botswana, covering Constitutional Law, Labour Law, Civil Litigation, and more." />
+      </Helmet>
       <Navbar />
 
       {/* Hero */}

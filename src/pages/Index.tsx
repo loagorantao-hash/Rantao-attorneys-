@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Scale, Briefcase, Building2, FileText, Home, Landmark, Calendar, Award, Globe, Shield, Users, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -41,6 +42,11 @@ const staggerContainer = {
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Rantao Attorneys | Strategic Legal Representation | Gaborone</title>
+        <meta name="description" content="Specializing in Constitutional, Administrative, and Commercial Jurisprudence. Delivering excellence in legal practice from Gaborone, Botswana." />
+        <meta name="keywords" content="Rantao Attorneys, law firm Botswana, Gaborone lawyers, constitutional law, commercial law, labour law, conveyancing" />
+      </Helmet>
       <Navbar />
       
       {/* Hero Section */}
