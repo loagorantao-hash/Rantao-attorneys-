@@ -27,7 +27,7 @@ const Navbar = () => {
           {/* Brand Mark */}
           <Link to="/" className="flex items-center gap-2.5 md:gap-4 flex-shrink-0">
             {/* Red square — smaller on mobile */}
-            <div className="relative bg-[#be1e2d] text-white font-serif w-10 h-10 md:w-14 md:h-14 shadow-sm overflow-hidden flex-shrink-0">
+            <div className="relative bg-[#be1e2d] text-white font-serif w-10 h-10 md:w-14 md:h-14 shadow-sm overflow-hidden flex-shrink-0" aria-hidden="true">
               <span className="absolute top-0 left-0.5 text-[32px] md:text-[44px] leading-none">R</span>
               <span className="absolute bottom-0 right-0.5 text-[32px] md:text-[44px] leading-none">A</span>
             </div>
@@ -73,9 +73,9 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+              <X className="h-6 w-6 text-foreground" aria-hidden="true" />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu className="h-6 w-6 text-foreground" aria-hidden="true" />
             )}
           </button>
         </div>

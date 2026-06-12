@@ -255,7 +255,7 @@ const Contact = () => {
                 <h3 className="font-serif text-xl font-bold text-charcoal mb-4">Our Location</h3>
                 <div className="rounded-[20px] overflow-hidden shadow-medium h-64">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.6397553970584!2d25.9116!3d-24.6544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sGrand%20Union%20Building!5e0!3m2!1sen!2sbw!4v1234567890"
+                    src="https://maps.google.com/maps?q=Grand%20Union%20Buildings,%20CBD,%20Gaborone,%20Botswana&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
